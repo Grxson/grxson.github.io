@@ -930,98 +930,179 @@
   </div>
   <!-- End Suscrive Area -->
   <!-- Start contact Area -->
-  <div id="contact" class="contact-area">
-    <div class="contact-inner area-padding">
-      <div class="contact-overly"></div>
-      <div class="container ">
-        <div class="row">
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <div class="section-headline text-center">
-              <h2>Contáctenos</h2>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <!-- Start contact icon column -->
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="contact-icon text-center">
-              <div class="single-icon">
-                <i class="fa fa-mobile"></i>
-                <p>
-                  Teléfono: +52 1234567890<br>
-                  <span>Lunes-Sabado (9am-5pm)</span>
-                </p>
-              </div>
-            </div>
-          </div>
-          <!-- Start contact icon column -->
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="contact-icon text-center">
-              <div class="single-icon">
-                <i class="fa fa-envelope-o"></i>
-                <p>
-                  Correo: hiqnet.web@gmail.com<br>
-                  <span>Web: www.hiqnet.mx</span>
-                </p>
-              </div>
-            </div>
-          </div>
-          <!-- Start contact icon column -->
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="contact-icon text-center">
-              <div class="single-icon">
-                <i class="fa fa-map-marker"></i>
-                <p>
-                  Ubicación: Ciudad Creativa Digital<br>
-                  <span>JAL 44100, MX</span>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-
-          <!-- Start Google Map -->
-          <div class="col-md-6 col-sm-6 col-xs-12">
-            <!-- Start Map -->
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3138.893073010268!2d-103.34237955252102!3d20.677959231981756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428b1ee1b51c3bf%3A0x6852c63cb2c82d09!2sCiudad%20Creativa%20Digital.%20Primer%20Complejo!5e0!3m2!1ses-419!2smx!4v1687654016387!5m2!1ses-419!2smx" width="100%" height="380" frameborder="0" style="border:0;" allowfullscreen></iframe>
-            <!-- End Map -->
-          </div>
-          <!-- End Google Map -->
-
-          <!-- Start  contact -->
-          <div class="col-md-6 col-sm-6 col-xs-12">
-            <div class="form contact-form">
-              <div id="sendmessage">Tu mensaje ha sido enviado correctamente. Gracias!</div>
-              <div id="errormessage"></div>
-
-              <form action='form.php' method='POST' role="form" class="contactForm">
-                <div class="form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Nombre" data-rule="minlen:4" data-msg="Por favor, introduzca al menos 4 caracteres" />
-                  <div class="validation"></div>
-                </div>
-                <div class="form-group">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Correo" data-rule="email" data-msg="Introduzca una dirección de correo electrónico válida" />
-                  <div class="validation"></div>
-                </div>
-                <div class="form-group">
-                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Asunto" data-rule="minlen:4" data-msg="Introduzca al menos 8 caracteres de asunto" />
-                  <div class="validation"></div>
-                </div>
-                <div class="form-group">
-                  <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Por favor, escriba algo para nosotros" placeholder="Mensaje"></textarea>
-                  <div class="validation"></div>
-                </div>
-                <div class="text-center"><button type="submit">Enviar Mensaje</button></div>
-              </form>
-            </div>
-          </div>
-
-          <!-- End Left contact -->
-        </div>
-      </div>
+  <section id="contact" aria-label="Sección de contacto">
+    <style>
+      /* Contenedor principal */
+      #contact {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 60px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        gap: 30px;
+        background-color: #fcfcfc;
+        font-family: Arial, sans-serif;
+        color: #fff;
+      }
+  
+      /* Estilo para ambas columnas */
+      #contact .col {
+        flex: 1;
+        max-width: 450px;
+      }
+  
+      /* Columna izquierda: imagen y mensaje */
+      #contact .contact-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+        padding: 10px;
+      }
+  
+      #contact .contact-left img {
+        max-width: 200px;
+        height: auto;
+        border-radius: 50%;
+        border: 4px solid #a5c513;
+      }
+  
+      /* Aumento de tamaño en el título */
+      #contact .contact-left h1 {
+        margin: 0;
+        font-size: 3rem;
+      }
+  
+      /* Aumento del tamaño de los párrafos */
+      #contact .contact-left p {
+        font-size: 1.25rem;
+        line-height: 1.5;
+        margin: 0 20px;
+      }
+  
+      /* Columna derecha: formulario de contacto */
+      /* Usamos rgb(161, 43, 230) que equivale a #a12be6 */
+      #contact .contact-right {
+        background-color: rgb(99, 20, 145);
+        border-radius: 8px;
+        padding: 30px;
+      }
+  
+      #contact .contact-right form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+  
+      /* Estilos de inputs y textarea con fuente aumentada */
+      #contact .contact-right input[type="text"],
+      #contact .contact-right input[type="email"],
+      #contact .contact-right textarea {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 4px;
+        font-size: 1.125rem;
+        box-sizing: border-box;
+        background-color: #fff;
+        color: #333;
+      }
+  
+      /* Estilos para el botón usando rgb para sus colores */
+      /* rgb(0, 225, 255) equivale a #00e1ff y rgb(0, 162, 255) equivale a #00a2ff */
+      #contact .contact-right button {
+        padding: 12px;
+        background-color: rgb(0, 225, 255);
+        color: #333;
+        border: none;
+        border-radius: 4px;
+        font-size: 1.25rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.2s;
+      }
+  
+      #contact .contact-right button:hover,
+      #contact .contact-right button:focus {
+        background-color: rgb(0, 162, 255);
+        transform: translateY(-2px);
+        outline: none;
+      }
+  
+      /* Responsividad: organizar las columnas en vertical en pantallas medianas y pequeñas */
+      @media (max-width: 960px) {
+        #contact {
+          flex-direction: column;
+          align-items: stretch;
+        }
+        #contact .col {
+          max-width: 100%;
+        }
+      }
+    </style>
+  
+    <!-- Columna Izquierda: Imagen y texto informativo -->
+    <div class="col contact-left">
+      <!-- Puedes reemplazar la URL por una imagen personalizada -->
+      <h1>Contactanos!</h1>
+      <p>
+        ¡Hola! Si deseas ponerte en contacto con nosotros, rellena el siguiente formulario o escríbenos a 
+        <strong>
+          <a href="mailto:hiqnet.web@gmail.com" style="color: #7513c5; text-decoration: none;">
+            hiqnet.web@gmail.com
+          </a>
+        </strong>.
+      </p>
+      <p>
+        Te responderemos lo más pronto posible <span style="font-size: 1.2em;">&#128515;</span>
+      </p>
     </div>
-  </div>
+  
+    <!-- Columna Derecha: Formulario de contacto -->
+    <div class="col contact-right">
+      <form action="#" method="POST" aria-label="Formulario de contacto">
+        <label for="nombre" class="sr-only">Nombre</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Nombre" required aria-required="true">
+  
+        <label for="email" class="sr-only">Correo electrónico</label>
+        <input type="email" id="email" name="email" placeholder="Email" required aria-required="true">
+  
+        <label for="mensaje" class="sr-only">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" rows="6" placeholder="Deja tu mensaje" required aria-required="true"></textarea>
+  
+        <button type="submit" aria-label="Enviar mensaje">Enviar</button>
+      </form>
+    </div>
+  </section>
+  
+  <!-- Estilo para ocultar etiquetas visualmente pero que sean leídas por lectores de pantalla -->
+  <style>
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
+  
+  
+  
+
+
+
+  
+  
+  
+
+  
   <!-- End Contact Area -->
 
   <!-- Start Footer bottom Area -->
