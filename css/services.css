@@ -19,16 +19,6 @@
     margin-top: 3%;
 }
 
-h1::after {
-    content: "";
-    width: 160px;
-    height: 3px;
-    background: #8509f8;
-    display: block;
-    margin: 10px auto 0;
-    border-radius: 4px;
-}
-
 /* Sección de Servicios */
 .services-2 {
     width: 100%;
